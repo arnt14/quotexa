@@ -364,7 +364,7 @@ Bearbeiten
     <h1>Quotexa</h1>
     <p style="color:gray;">Gespeicherte Angebote</p>
    
-    <a href="/" style="background:#2563EB; color:white; padding:10px 14px; border-radius:8px; text-decoration:none;">
+    <a href="/new-offer" style="background:#2563EB; color:white; padding:10px 14px; border-radius:8px; text-decoration:none;">
     Neues Angebot
     </a>
    
@@ -838,7 +838,7 @@ onkeyup="searchCustomers()"
 style="width:100%;padding:12px;margin:15px 0;border:1px solid #ddd;border-radius:8px;"
 >
   
-  <a href="/" style="background:#2563EB;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;">
+  <a href="/new-offer" style="background:#2563EB;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;">
   Neues Angebot
   </a>
   
@@ -962,7 +962,7 @@ Logout
 </a>
       <p style="color:gray;">Übersicht deiner Angebote</p>
       
-      <a href="/" style="background:#2563EB;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;">
+      <a href="/new-offer" style="background:#2563EB;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;">
       Neues Angebot
       </a>
       
