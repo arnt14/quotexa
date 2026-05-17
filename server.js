@@ -1160,108 +1160,67 @@ db.run(
               });   
 
               app.get("/login", (req, res) => {
-                res.send(`
-                <h1>Login</h1>
-                <form method="POST" action="/login">
-                <input name="email" placeholder="E-Mail"><br><br>
-                <input name="password" type="password" placeholder="Passwort"><br><br>
-                <button>Login</button>
-                </form>
-                );
-               });
-               
-               app.post("/login", (req, res) => {
-                const { email, password } = req.body;
-               
-                db.get("SELECT * FROM users WHERE email = ?", [email], async (err, user) => {
-                if (!user) return res.send("User nicht gefunden");
-               
-                const ok = await bcrypt.compare(password, user.password);
-                if (!ok) return res.send("Falsches Passwort");
+ res.send(`
+ <h1>Login</h1>
+ <form method="POST" action="/login">
+ <input name="email" placeholder="E-Mail"><br><br>
+ <input name="password" type="password" placeholder="Passwort"><br><br>
+ <button>Login</button>
+ </form>
+ `);
+});
 
-req.session.userId = user.id;
-req.session.email = user.email;
+app.post("/login", (req, res) => {
+ const { email, password } = req.body;
 
-res.redirect("/dashboard");
-                });
+ db.get("SELECT * FROM users WHERE email = ?", [email], async (err, user) => {
+ if (!user) return res.send("User nicht gefunden");
 
-               app.get("/logout", (req, res) => {
-                req.session.destroy(() => {
-                res.redirect("/login");
-                });
-                });    
+ const ok = await bcrypt.compare(password, user.password);
+ if (!ok) return res.send("Falsches Passwort");
+
+ req.session.userId = user.id;
+ req.session.email = user.email;
+
+ res.redirect("/dashboard");
+ });
+});
+
+app.get("/logout", (req, res) => {
+ req.session.destroy(() => {
+ res.redirect("/login");
+ });
+});
 
 app.get("/new-offer", (req, res) => {
-res.send(`
+ res.send(`
 <html>
 <head>
 <title>Neues Angebot</title>
-
 <style>
-body{
-font-family:Arial;
-background:#f4f4f4;
-padding:40px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-max-width:500px;
-margin:auto;
-}
-
-input{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:8px;
-}
-
-button{
-background:#2563EB;
-color:white;
-border:none;
-padding:12px 18px;
-border-radius:8px;
-cursor:pointer;
-}
+body{font-family:Arial;background:#f4f4f4;padding:40px;}
+.card{background:white;padding:30px;border-radius:12px;max-width:500px;margin:auto;}
+input{width:100%;padding:12px;margin-bottom:15px;border:1px solid #ddd;border-radius:8px;}
+button{background:#2563EB;color:white;border:none;padding:12px 18px;border-radius:8px;cursor:pointer;}
 </style>
 </head>
-
 <body>
-
 <div class="card">
-
 <h1>Neues Angebot</h1>
-
 <form action="/generate-offer" method="GET">
-
 <input name="customer" placeholder="Kunde">
-
 <input name="service1" placeholder="Service 1">
-
 <input name="price1" placeholder="Preis 1">
-
 <input name="service2" placeholder="Service 2">
-
 <input name="price2" placeholder="Preis 2">
-
-<button type="submit">
-Angebot erstellen
-</button>
-
+<button type="submit">Angebot erstellen</button>
 </form>
-
 </div>
-
 </body>
 </html>
-);
+ `);
 });
-    
+
 app.listen(PORT, () => {
-console.log("Server läuft auf Port " + PORT);
+ console.log("Server läuft auf Port " + PORT);
 });
