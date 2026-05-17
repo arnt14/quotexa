@@ -67,12 +67,110 @@ const offers = [];
 
 app.get("/", (req, res) => {
 res.send(`
-<h1>Quotexa</h1>
-<p>Smart Offers for Service Businesses</p>
+<html>
+<head>
+<title>Quotexa</title>
 
-<a href="/generate-offer">Angebot erstellen</a><br><br>
-<a href="/dashboard">Dashboard öffnen</a><br><br>
-<a href="/angebote">Alle Angebote ansehen</a>
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#f4f7fb;
+display:flex;
+}
+
+.sidebar{
+width:240px;
+background:#111827;
+height:100vh;
+color:white;
+padding:30px 20px;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+margin-bottom:40px;
+}
+
+.menu a{
+display:block;
+color:white;
+text-decoration:none;
+padding:14px;
+margin-bottom:10px;
+border-radius:10px;
+background:#1f2937;
+}
+
+.menu a:hover{
+background:#2563eb;
+}
+
+.content{
+flex:1;
+padding:50px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+h1{
+margin-top:0;
+}
+
+.button{
+background:#2563eb;
+color:white;
+padding:14px 22px;
+border:none;
+border-radius:10px;
+text-decoration:none;
+display:inline-block;
+margin-top:20px;
+}
+
+.button:hover{
+background:#1d4ed8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+<div class="logo">Quotexa</div>
+
+<div class="menu">
+<a href="/generate-offer">📄 Neues Angebot</a>
+<a href="/angebote">📁 Angebote</a>
+<a href="/dashboard">📊 Dashboard</a>
+</div>
+</div>
+
+<div class="content">
+
+<div class="card">
+<h1>Willkommen bei Quotexa</h1>
+
+<p>
+Erstelle professionelle Angebote für Kunden in Sekunden.
+</p>
+
+<a class="button" href="/generate-offer">
+Angebot erstellen
+</a>
+</div>
+
+</div>
+
+</body>
+</html>
 `);
 });
 
