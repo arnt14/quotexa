@@ -1184,7 +1184,6 @@ req.session.email = user.email;
 
 res.redirect("/dashboard");
                 });
-               });
 
                app.get("/logout", (req, res) => {
                 req.session.destroy(() => {
