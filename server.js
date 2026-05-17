@@ -1010,7 +1010,7 @@ Logout
       </div>
       </body>
       </html>
-      `);
+      );
       });
       });  
 
@@ -1103,7 +1103,7 @@ updateTotal();
           </div>
           </body>
           </html>
-          `);
+          );
           });
           });
           
@@ -1167,7 +1167,7 @@ db.run(
                 <input name="password" type="password" placeholder="Passwort"><br><br>
                 <button>Login</button>
                 </form>
-                `);
+                );
                });
                
                app.post("/login", (req, res) => {
