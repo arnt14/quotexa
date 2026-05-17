@@ -66,34 +66,15 @@ db.run(`ALTER TABLE offers ADD COLUMN offerNumber TEXT`, (err) => {
 const offers = [];
 
 app.get("/", (req, res) => {
-  res.send(`
-  <html>
-  <head>
-  <title>Quotexa</title>
-  </head>
-  <body style="font-family: Arial; background:#f4f4f4; padding:40px;">
-  <div style="background:white; padding:30px; max-width:600px; margin:auto; border-radius:12px;">
-  <h1>Quotexa</h1>
-  <p style="color:gray;">Smart Offers for Service Businesses</p>
-  
-  <form action="/generate-offer" method="GET">
-  <input name="customer" placeholder="Kundenname" style="width:100%; padding:12px; margin:8px 0;"><br>
-  
-  <input name="service1" placeholder="Leistung 1" style="width:100%; padding:12px; margin:8px 0;"><br>
-  <input type="number" name="price1" placeholder="Preis 1" style="width:100%; padding:12px; margin:8px 0;"><br>
-  
-  <input name="service2" placeholder="Leistung 2" style="width:100%; padding:12px; margin:8px 0;"><br>
-  <input type="number" name="price2" placeholder="Preis 2" style="width:100%; padding:12px; margin:8px 0;"><br>
-  
-  <button style="padding:12px 20px; background:#2563EB; color:white; border:none; border-radius:8px;">
-  Angebot erstellen
-  </button>
-  </form>
-  </div>
-  </body>
-  </html>
-  `);
-  });
+res.send(`
+<h1>Quotexa</h1>
+<p>Smart Offers for Service Businesses</p>
+
+<a href="/generate-offer">Angebot erstellen</a><br><br>
+<a href="/dashboard">Dashboard öffnen</a><br><br>
+<a href="/angebote">Alle Angebote ansehen</a>
+`);
+});
 
 app.get("/", (req, res) => {
 res.send(`
