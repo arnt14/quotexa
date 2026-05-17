@@ -455,6 +455,10 @@ const offerNumber = "ANG-" + Date.now();
 console.log("ANGEBOTSNUMMER:", offerNumber);
 
 const userId = req.session.userId;
+    
+    if (!userId) {
+return res.redirect("/login");
+}
 
 db.run(
   `INSERT INTO offers (customer, userId, items, total, date, offerNumber)
