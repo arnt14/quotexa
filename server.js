@@ -378,7 +378,7 @@ Bearbeiten
     <p><strong>Datum:</strong> ${offer.createdAt || offer.date || "-"}</p>
 
 
-<a href="/download-pdf?offerNumber=${offer.offerNumber}"
+<a href="/download-pdf?id=${offer.id}"
 style="
 background:#2563EB;
 color:white;
@@ -529,7 +529,7 @@ Gesamt: ${total} CHF
 
 <br>
 
-<a href="/download-pdf?offerNumber=${offer.offerNumber}"
+<a href="/download-pdf?id=${offer.id}"
 style="
 background:#2563EB;
 color:white;
@@ -552,10 +552,11 @@ PDF öffnen
 const PORT = 3000;
  
 app.get("/download-pdf", (req, res) => {
-  const offerNumber = req.query.offerNumber;
- 
-  db.get("SELECT * FROM offers WHERE offerNumber = ?", [offerNumber], (err, offer) => {
-  if (err || !offer) {
+  const id = req.query.id;
+
+db.get(
+"SELECT * FROM offers WHERE id = ?",
+[id],
   return res.send("Angebot nicht gefunden");
   }
  
@@ -913,7 +914,7 @@ card.style.display = text.includes(input) ? "block" : "none";
     <p><strong>Total:</strong> ${offer.total} CHF</p>
     <p><strong>Datum:</strong> ${offer.createdAt || offer.date || "-"}</p>
     
-    <a href="/download-pdf?offerNumber=${offer.offerNumber}"
+    <a href="/download-pdf?id=${offer.id}"
     style="background:#2563EB;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:10px;">
     PDF öffnen
     </a>
