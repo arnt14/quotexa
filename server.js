@@ -164,7 +164,7 @@ background:#1d4ed8;
 Erstelle professionelle Angebote für Kunden in Sekunden.
 </p>
 
-<a class="button" href="/generate-offer">
+<a class="button" href="/new-offer">
 Angebot erstellen
 </a>
 </div>
@@ -1223,7 +1223,7 @@ cursor:pointer;
 
 <h1>Neues Angebot</h1>
 
-<form action="/generate-offer">
+<form action="/generate-offer" method="GET">
 
 <input name="customer" placeholder="Kunde">
 
