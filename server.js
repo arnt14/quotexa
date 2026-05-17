@@ -378,7 +378,7 @@ Bearbeiten
     <p><strong>Datum:</strong> ${offer.createdAt || offer.date || "-"}</p>
 
 
-<a href="/download-pdf?customer=${offer.customer}&offerNumber=${offer.offerNumber}"
+<a href="/download-pdf?offerNumber=${offer.offerNumber}"
 style="
 background:#2563EB;
 color:white;
@@ -529,7 +529,7 @@ Gesamt: ${total} CHF
 
 <br>
 
-<a href="/download-pdf?customer=${offer.customer}&offerNumber=${offer.offerNumber}"
+<a href="/download-pdf?offerNumber=${offer.offerNumber}"
 style="
 background:#2563EB;
 color:white;
