@@ -569,8 +569,10 @@ app.get("/download-pdf", (req, res) => {
 db.get(
 "SELECT * FROM offers WHERE id = ?",
 [id],
-  return res.send("Angebot nicht gefunden");
-  }
+(err, offer) => {
+if (err || !offer) {
+return res.send("Angebot nicht gefunden");
+}
  
   const doc = new PDFDocument();
   doc.image("public/logo.png", 50, 45, { width: 120 });
