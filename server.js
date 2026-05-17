@@ -147,7 +147,7 @@ background:#1d4ed8;
 <div class="logo">Quotexa</div>
 
 <div class="menu">
-<a href="/generate-offer">📄 Neues Angebot</a>
+<a href="/new-offer">📄 Neues Angebot</a>
 <a href="/angebote">📁 Angebote</a>
 <a href="/dashboard">📊 Dashboard</a>
 <a href="/login">🔐 Login</a>
