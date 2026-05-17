@@ -51,6 +51,14 @@ date TEXT
 )
 `);
 
+db.run(`
+CREATE TABLE IF NOT EXISTS users (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+email TEXT UNIQUE,
+password TEXT
+)
+`);
+
 db.run(`ALTER TABLE offers ADD COLUMN offerNumber TEXT`, (err) => {
   if (err) {
   // ok wenn schon vorhanden
