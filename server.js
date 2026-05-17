@@ -435,13 +435,13 @@ customer: req.query.customer || "Max Mustermann",
 
 items: [
   {
-  title: req.query.service1,
-  price: Number(req.query.price1)
+  title: req.query.service1 || "Service",
+price: Number(req.query.price1 || 0)
   },
   
   {
-  title: req.query.service2,
-  price: Number(req.query.price2)
+  title: req.query.service2 || "Service",
+price: Number(req.query.price2 || 0)
   }
 ]
 };
