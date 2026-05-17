@@ -246,6 +246,19 @@ Angebot erstellen
 `);
 });
 
+app.get("/login", (req, res) => {
+res.send(`
+<h1>Login</h1>
+<form>
+<input placeholder="E-Mail"><br><br>
+<input type="password" placeholder="Passwort"><br><br>
+<button>Einloggen</button>
+</form>
+<br>
+<a href="/">Zurück</a>
+`);
+});
+
 app.get("/offers", (req, res) => {
 
   db.all("SELECT id, customer, items, total, date, offerNumber FROM offers", [], (err, rows) => {
