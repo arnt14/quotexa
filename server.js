@@ -150,6 +150,8 @@ background:#1d4ed8;
 <a href="/generate-offer">📄 Neues Angebot</a>
 <a href="/angebote">📁 Angebote</a>
 <a href="/dashboard">📊 Dashboard</a>
+<a href="/login">🔐 Login</a>
+<a href="/register">📝 Registrieren</a>
 </div>
 </div>
 
