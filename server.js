@@ -913,7 +913,7 @@ card.style.display = text.includes(input) ? "block" : "none";
     <p><strong>Total:</strong> ${offer.total} CHF</p>
     <p><strong>Datum:</strong> ${offer.createdAt || offer.date || "-"}</p>
     
-    <a href="/download-pdf?id=${offer.id}"
+    <a href="/download-pdf?offerNumber=${offer.offerNumber}"
     style="background:#2563EB;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:10px;">
     PDF öffnen
     </a>
