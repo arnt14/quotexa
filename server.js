@@ -1259,7 +1259,7 @@ Angebot erstellen
 
 </body>
 </html>
-`);
+);
 });
     
 app.listen(PORT, () => {
